@@ -34,6 +34,7 @@
 
 * {
   box-sizing: border-box;
+  user-select: none;
 }
 
 body {
@@ -53,7 +54,7 @@ body {
   border-radius: 100px;
 }
 
-.items>span {
+.items span {
   width: fit-content;
   display: flex;
   padding: 10px;
@@ -84,7 +85,21 @@ body {
   transition: all 100ms;
 }
 
-.items>span:hover {
+.items span:hover ,.topbar div:hover {
   transition: all 100ms;
   background: #EFF3F419;
+}
+.bor{
+  border: 1px solid white;
+}
+.fl{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.topbar div{
+  
+  width: 100%;
+  height: 60px;
+  cursor: pointer;
 }

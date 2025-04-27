@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Sidebar from "@/components/Sidebar";
+import favicon from "@/app/favicon.ico"
+
+{/* Move this to the <head> section */}
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +28,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased grid grid-cols-4 select-none overflow-x-hidden p-1`}
       >
-        {children}
+        <div className="">
+
+          <Sidebar />
+        </div>
+        <div className="">
+          {children}
+        </div>
       </body>
     </html>
   );
