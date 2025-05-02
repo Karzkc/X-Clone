@@ -29,10 +29,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="./favicon.ico" sizes="any" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased grid grid-cols-4 select-none overflow-x-hidden p-1`}
+        className={`${geistSans.variable} ${geistMono.variable} w-full antialiased grid sm:grid-cols-4  select-none overflow-x-hidden gap-0`}
       >
         <div className="">
 
