@@ -1,10 +1,28 @@
 "use client"
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation';
 
 
 const Sidebar = () => {
     const [expanded, setExpanded] = useState(true);
+    const pathname = usePathname();
+    const [pageURL, setPageURL] = useState("");
+
+    useEffect(() => {
+        const current = pathname.split('/').filter(Boolean).pop();
+        setPageURL(current || "home");
+        console.log("Current Page:", current);
+        document.querySelectorAll('.sidebar .title').forEach(el => {
+            el.classList.remove('!font-[700]');
+            el.classList.remove('!text-white');
+        });
+        if (current) {
+            const currTitle = document.querySelector(`.sidebar .title.${current}`);
+            currTitle?.classList.add('!font-[700]');
+            currTitle?.classList.add('!text-white');
+        }
+    }, [pathname]); 
 
     useEffect(() => {
         const handleExpandation = () => {
@@ -14,22 +32,22 @@ const Sidebar = () => {
                 setExpanded(true);
             }
         };
-
         handleExpandation();
         window.addEventListener('resize', handleExpandation);
-
         return () => {
             window.removeEventListener('resize', handleExpandation);
         };
     }, []);
 
+    
+    
 
     return (
         <>
 
             <div className='sidebar sm:ps-18 ps-5  pt-2 pb-8 border-r-2 border-r-[#1d1f21]   h-screen absolute left-0 flex flex-col justify-between items-center gap-0'>
 
-                <div className="logo items">
+                <div className="logo items ">
                     <Link href={"/home"}>
 
                         <span className=' !pr-3'>
@@ -41,119 +59,96 @@ const Sidebar = () => {
                 </div>
                 <div className="home items">
                     <Link href={"/home"}>
-
                         <span>
                             <div className="icon">
                                 <img src="/icons/home.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
-
-                                <div className="title text-xl">Home </div>
+                                <div className="title  home text-xl ">Home</div>
                             }
                         </span>
                     </Link>
                 </div>
                 <div className="search items">
                     <Link href={"/explore"}>
-
                         <span>
-
                             <div className="icon">
                                 <img src="/icons/search.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
-
-                                <div className="title text-xl">Explore</div>
+                                <div className="title explore text-xl">Explore</div>
                             }
                         </span>
                     </Link>
                 </div>
                 <div className="notifications items">
                     <Link href={"/notifications"}>
-
                         <span>
-
                             <div className="icon">
                                 <img src="/icons/notif.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
-
-                                <div className="title text-xl">Notifications</div>
+                                <div className="title notifications text-xl">Notifications</div>
                             }
                         </span>
                     </Link>
                 </div>
                 <div className="messages items">
                     <Link href={"/messages"}>
-
                         <span>
-
                             <div className="icon">
                                 <img src="/icons/msg.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
-
-                                <div className="title text-xl">Messages</div>
+                                <div className="title messages text-xl">Messages</div>
                             }
                         </span>
                     </Link>
                 </div>
                 <div className="grok items">
                     <Link href={"/grok"}>
-
                         <span>
-
                             <div className="icon">
                                 <img src="/icons/grok.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
-
-                                <div className="title text-xl">Grok</div>
+                                <div className="title grok text-xl">Grok</div>
                             }
                         </span>
                     </Link>
                 </div>
                 <div className="communities items">
                     <Link href={"/communities"}>
-
                         <span>
-
                             <div className="icon">
                                 <img src="/icons/communities.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
-
-                                <div className="title text-xl">Communities</div>
+                                <div className="title communities text-xl">Communities</div>
                             }
                         </span>
                     </Link>
                 </div>
                 <div className="premium items">
                     <Link href={"/premium_sign_up"}>
-
                         <span>
-
                             <div className="icon">
                                 <img src="/icons/logo.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
-
-                                <div className="title text-xl">Premium</div>
+                                <div className="title premium_sign_up text-xl">Premium</div>
                             }
                         </span>
                     </Link>
                 </div>
                 <div className="profile items">
                     <Link href={"/username"}>
-
                         <span>
-
                             <div className="icon">
                                 <img src="/icons/profile.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
-
-                                <div className="title text-xl">Profile</div>
+                                <div className="title username text-xl">Profile</div>
                             }
                         </span>
                     </Link>

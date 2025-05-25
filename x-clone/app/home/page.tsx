@@ -1,6 +1,8 @@
 "use client"
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react'
+import { usePathname } from 'next/navigation';
+import { Check, Globe, User, ShieldCheck, AtSign } from "lucide-react"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,7 +13,10 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 
-const page = () => {
+const page = ({ selected = "Everyone" }) => {
+  const pathname = usePathname();
+  const pageURL = pathname.split('/').filter(Boolean).pop();
+  console.log(pageURL)
   const [input, setInput] = useState(false)
   const [searchCancel, setSearchCancel] = useState(false)
   const [searchValue, setSearchValue] = useState("")
@@ -71,27 +76,53 @@ const page = () => {
 
               <img src="/icons/global-icon.svg" alt="global" className='h-[22px]' />
               <div className='text-[#1d9bf0]   '>
-                <DropdownMenu >
-                  <DropdownMenuTrigger>
-                    <span className="!cursor-pointer"> Everyone can Reply</span>
+                <DropdownMenu>
+                  <DropdownMenuTrigger className="cursor-pointer text-[#1d9bf0]">
+                    Everyone can Reply
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    <DropdownMenuLabel>
-                      <span className='text-sm '>Who can reply?</span> <br />
-                      <span className='text-[12px] text-gray-600'>Choose who can reply to this post. Anyone mentioned can always reply.</span>
+
+                  <DropdownMenuContent className="dropdown bg-black text-white w-84 p-2 rounded-xl shadow-lg border-none">
+                    <DropdownMenuLabel className="text-white font-bold text-xl">
+                      Who can reply?
+                      <div className="text-gray-400 text-sm font-normal">
+                        Choose who can reply to this post. Anyone mentioned can always reply.
+                      </div>
                     </DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem>Everyone</DropdownMenuItem>
-                    <DropdownMenuItem>Accounts you follow</DropdownMenuItem>
-                    <DropdownMenuItem>Verified accounts</DropdownMenuItem>
-                    <DropdownMenuItem>Only accounts you mention</DropdownMenuItem>
+
+                    <DropdownMenuSeparator className="bg-gray-700" />
+
+                    {[
+                      { label: "Everyone", icon: <Globe size={18} className='text-white' />, value: "Everyone" },
+                      { label: "Accounts you follow", icon: <User size={18} className='text-white' />, value: "Accounts you follow" },
+                      { label: "Verified accounts", icon: <ShieldCheck size={18} className='text-white' />, value: "Verified accounts" },
+                      { label: "Only accounts you mention", icon: <AtSign size={18} className='text-white' />, value: "Only accounts you mention" },
+                    ].map((item) => (
+                      <DropdownMenuItem
+                        key={item.value}
+                        className="flex items-center gap-3 py-2 px-2 cursor-pointer transition-colors duration-100 hover:!bg-gray-800 hover:!text-white rounded-md"
+                      >
+                        <div className="bg-[#1d9bf0] p-2 rounded-full text-white">
+                          {item.icon}
+                        </div>
+                        <span className="flex-1">{item.label}</span>
+                        {selected === item.value && <Check size={18} />}
+                      </DropdownMenuItem>
+
+                    ))}
                   </DropdownMenuContent>
                 </DropdownMenu>
 
+
               </div>
             </div>}
-            <div className='options'>
-
+            <div className='options flex items-center justify-start  pl-25 gap-2'>
+              <img src="/icons/input/media.svg" alt="pic" />
+              <img src="/icons/input/gif.svg" alt="pic" />
+              <img src="/icons/input/grok.svg" alt="pic" />
+              <img src="/icons/input/poll.svg" alt="pic" />
+              <img src="/icons/input/emoji.svg" alt="pic" />
+              <img src="/icons/input/schedule.svg" alt="pic" />
+              <img src="/icons/input/location.svg" alt="pic" />
             </div>
           </div>
           <div className="posts">
@@ -121,7 +152,7 @@ const page = () => {
             <div className='text-xl font-bold mb-4'>Subscribe to Premium</div>
             <div className='text-[#d2d3d4]  mb-4'>Subscribe to unlock new features and if eligible, receive a share of revenue.</div>
             <button className='font-bold text-lg bg-[#1d9bf0] rounded-4xl flex items-center justify-center h-10 w-30 '>
-            <Link href={"/premium_sign_up"}>Subscribe</Link>
+              <Link href={"/premium_sign_up"}>Subscribe</Link>
             </button>
           </div>
         </div>

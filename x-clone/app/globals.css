@@ -237,6 +237,21 @@ body {
 
 }
 
-.search-popup {
+.search-popup , .dropdown{
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px;
+}
+
+.title:not(.post div) {
+  color: rgb(181, 181, 181);
+}
+.options img{
+  height: 36px;
+  cursor: pointer;
+  border-radius: 9999px;
+  padding: 7px;
+  border: none;
+}
+
+.options img:hover {
+  background-color: #031018;
 }
