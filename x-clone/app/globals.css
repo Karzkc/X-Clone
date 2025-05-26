@@ -208,7 +208,7 @@ body {
 
 .items span:hover,
 .topbar div:hover {
-  transition: all 100ms;
+  transition: all 200ms ease-in-out;
   background: #EFF3F419;
 }
 
@@ -220,6 +220,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+}
+
+.bottom-line{
+  width: 30%;
+  height: 5px;
+  background-color: #1d9bf0;
+  position: absolute;
+  bottom: 0;
+  border-radius: 9999px;
 }
 
 .topbar div {
@@ -255,3 +267,18 @@ body {
 .options img:hover {
   background-color: #031018;
 }
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #1d9bf0;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+

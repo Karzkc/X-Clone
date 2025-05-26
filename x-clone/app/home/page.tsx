@@ -14,32 +14,31 @@ import {
 
 
 const page = ({ selected = "Everyone" }) => {
+
+  // URL based sidebar boldnesss logic
   const pathname = usePathname();
   const pageURL = pathname.split('/').filter(Boolean).pop();
   console.log(pageURL)
-  const [input, setInput] = useState(false)
-  const [searchCancel, setSearchCancel] = useState(false)
-  const [searchValue, setSearchValue] = useState("")
-  const [search_popup, setSearch_popup] = useState(false)
 
-  const search_ref = useRef<HTMLInputElement>(null)
-
+  // Home Page Input Logic
+  const [input, setInput] = useState(false);
+  const [centersearchValue, setCentersearchValue] = useState("");
+  const handleCenterSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setCentersearchValue(value);
+  };
 
   useEffect(() => {
     setInput(false)
-  }, [])
+  }, []);
 
   const handleInputPost = () => {
     setInput(true)
-  }
-
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setSearchValue(value);
-    setSearchCancel(value.length > 0);
-
   };
 
+  // Searchbar Cancel Button Logic
+  const search_ref = useRef<HTMLInputElement>(null)
+  const [searchCancel, setSearchCancel] = useState(false);
   const handleCancel = () => {
     setSearchValue("")
     if (search_ref.current) {
@@ -48,9 +47,30 @@ const page = ({ selected = "Everyone" }) => {
     setSearchCancel(false)
   }
 
+  // Searchbar Value Logic
+  const [searchValue, setSearchValue] = useState("");
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setSearchValue(value);
+    setSearchCancel(value.length > 0);
+
+  };
+
+  // Searchbar Suggestion Popup Logic
+  const [search_popup, setSearch_popup] = useState(false);
   const searchPopupAppear = (e: boolean) => {
     setSearch_popup(e)
+  }
 
+  // Center Topbar Selection Logic
+  const [bottom_line, setBottom_line] = useState(true);
+  const handleTopbarSelection = (e: boolean) => {
+    if (e) {
+      setBottom_line(true)
+    }
+    else {
+      setBottom_line(false)
+    }
   }
 
   return (
@@ -58,17 +78,31 @@ const page = ({ selected = "Everyone" }) => {
       <div className="container flex w-[70vw] h-[100vh]">
         <div className="center container  w-[60%] ">
           <div className="topbar border-b-1 border-b-[#1d1f21] flex items-center justify-center ">
-            <div className=' fl text-lg'>
+            <div className=' fl text-lg' onClick={() => { handleTopbarSelection(true) }}>
               For You
+              {
+                bottom_line && <span className="bottom-line  ">
+                </span>
+              }
             </div>
-            <div className=' fl text-lg'>
+            <div className=' fl text-lg' onClick={() => { handleTopbarSelection(false) }}>
               Following
+              {
+                !bottom_line && <span className="bottom-line  ">
+                </span>
+              }
             </div>
           </div>
-          <div className="posting pr-4  border-b-1 border-b-[#1d1f21] h-35 ">
+          <div className={`posting pr-4  border-b-1 border-b-[#1d1f21] ${input ? "h-40" : "h-30"} `}>
             <div className='flex items-center gap-5 m-5' >
               <img src="/icons/user.png" alt="logo" className="h-[45px] rounded-4xl" />
-              <input onClick={handleInputPost} type="text" placeholder="What's Happening?" className='outline-none focus:border-none focus:outline-none placeholder:text-xl text-xl' />
+              <input
+                onClick={handleInputPost}
+                value={centersearchValue}
+                ref={search_ref}
+                onChange={(e) => { handleCenterSearch(e) }}
+                type="text" placeholder="What's Happening?"
+                className='outline-none focus:border-none focus:outline-none placeholder:text-xl text-xl' />
 
             </div>
 
@@ -115,7 +149,7 @@ const page = ({ selected = "Everyone" }) => {
 
               </div>
             </div>}
-            <div className='options flex items-center justify-start  pl-25 gap-2'>
+            <div className='options flex items-center justify-start  pl-25 gap-2 relative'>
               <img src="/icons/input/media.svg" alt="pic" />
               <img src="/icons/input/gif.svg" alt="pic" />
               <img src="/icons/input/grok.svg" alt="pic" />
@@ -123,6 +157,8 @@ const page = ({ selected = "Everyone" }) => {
               <img src="/icons/input/emoji.svg" alt="pic" />
               <img src="/icons/input/schedule.svg" alt="pic" />
               <img src="/icons/input/location.svg" alt="pic" />
+
+              <span className={`rounded-4xl text-black w-20 fl text-[16px] h-10 font-[600] ml-30 ${centersearchValue ? "bg-[#eff3f4]" : "bg-[#787a7a]"}`}>Post</span>
             </div>
           </div>
           <div className="posts">
@@ -145,7 +181,7 @@ const page = ({ selected = "Everyone" }) => {
               <img src="/icons/cross.svg" alt="cancel" className='h-6' />
             </span>}
           </div>
-          {search_popup && <div className="search-popup bg-black min-h-[100px] flex justify-center items-start rounded-[8px] ">
+          {search_popup && <div className="search-popup bg-black min-h-[100px] flex justify-center items-start rounded-[8px]">
             <span className='text-[#666a6f] text-[17px] mt-5'> Try searching for people, lists, or keywords </span>
           </div>}
           <div className="premium-section mt-5 p-2 ps-5  h-[170px] w-full border border-[#1d1f21] rounded-[12px] flex-col items-center justify-center">
