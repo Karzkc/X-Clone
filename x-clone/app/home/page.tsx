@@ -1,6 +1,7 @@
 "use client"
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react'
+import Search_input from '@/components/Search_input';
 import { usePathname } from 'next/navigation';
 import { Check, Globe, User, ShieldCheck, AtSign } from "lucide-react"
 import {
@@ -14,6 +15,8 @@ import {
 
 
 const page = ({ selected = "Everyone" }) => {
+
+  const search_ref = useRef<HTMLInputElement>(null)
 
   // URL based sidebar boldnesss logic
   const pathname = usePathname();
@@ -36,31 +39,7 @@ const page = ({ selected = "Everyone" }) => {
     setInput(true)
   };
 
-  // Searchbar Cancel Button Logic
-  const search_ref = useRef<HTMLInputElement>(null)
-  const [searchCancel, setSearchCancel] = useState(false);
-  const handleCancel = () => {
-    setSearchValue("")
-    if (search_ref.current) {
-      search_ref.current.focus();
-    }
-    setSearchCancel(false)
-  }
 
-  // Searchbar Value Logic
-  const [searchValue, setSearchValue] = useState("");
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setSearchValue(value);
-    setSearchCancel(value.length > 0);
-
-  };
-
-  // Searchbar Suggestion Popup Logic
-  const [search_popup, setSearch_popup] = useState(false);
-  const searchPopupAppear = (e: boolean) => {
-    setSearch_popup(e)
-  }
 
   // Center Topbar Selection Logic
   const [bottom_line, setBottom_line] = useState(true);
@@ -78,14 +57,14 @@ const page = ({ selected = "Everyone" }) => {
       <div className="container flex w-[70vw] h-[100vh]">
         <div className="center container  w-[60%] ">
           <div className="topbar border-b-1 border-b-[#1d1f21] flex items-center justify-center ">
-            <div className=' fl text-lg' onClick={() => { handleTopbarSelection(true) }}>
+            <div className=' fl cursor-pointer  relative text-lg' onClick={() => { handleTopbarSelection(true) }}>
               For You
               {
                 bottom_line && <span className="bottom-line  ">
                 </span>
               }
             </div>
-            <div className=' fl text-lg' onClick={() => { handleTopbarSelection(false) }}>
+            <div className=' fl cursor-pointer relative text-lg' onClick={() => { handleTopbarSelection(false) }}>
               Following
               {
                 !bottom_line && <span className="bottom-line  ">
@@ -158,32 +137,15 @@ const page = ({ selected = "Everyone" }) => {
               <img src="/icons/input/schedule.svg" alt="pic" />
               <img src="/icons/input/location.svg" alt="pic" />
 
-              <span className={`rounded-4xl text-black w-20 fl text-[16px] h-10 font-[600] ml-30 ${centersearchValue ? "bg-[#eff3f4]" : "bg-[#787a7a]"}`}>Post</span>
+              <span className={`rounded-4xl text-black w-20 fl relative cursor-pointer text-[16px] h-10 font-[600] ml-30 ${centersearchValue ? "bg-[#eff3f4] cursor-pointer" : "bg-[#787a7a] !cursor-not-allowed"}`}>Post</span>
             </div>
           </div>
           <div className="posts">
             posts
           </div>
         </div>
-        <div className="right container border w-[40%] p-4">
-          <div className='flex items-center search-input rounded-4xl border-2 pr-2 border-[#1d1f21] focus-within:border-[#1d9bf0]'>
-            <input
-              type="text"
-              placeholder="Search"
-              value={searchValue}
-              ref={search_ref}
-              className="caret-[#1d9bf0] outline-none h-max w-full p-2 pl-10 placeholder:text-white"
-              onChange={(e) => { handleSearch(e) }}
-              onFocus={() => searchPopupAppear(true)}
-              onBlur={() => searchPopupAppear(false)}
-            />
-            {searchCancel && <span className='cursor-pointer' onClick={handleCancel}>
-              <img src="/icons/cross.svg" alt="cancel" className='h-6' />
-            </span>}
-          </div>
-          {search_popup && <div className="search-popup bg-black min-h-[100px] flex justify-center items-start rounded-[8px]">
-            <span className='text-[#666a6f] text-[17px] mt-5'> Try searching for people, lists, or keywords </span>
-          </div>}
+        <div className="right container w-[40%] p-4 border-l border-l-[#1d1f21]">
+          <Search_input />
           <div className="premium-section mt-5 p-2 ps-5  h-[170px] w-full border border-[#1d1f21] rounded-[12px] flex-col items-center justify-center">
             <div className='text-xl font-bold mb-4'>Subscribe to Premium</div>
             <div className='text-[#d2d3d4]  mb-4'>Subscribe to unlock new features and if eligible, receive a share of revenue.</div>
