@@ -1,20 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import favicon from "@/app/favicon.ico"
 
-{/* Move this to the <head> section */}
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -32,13 +21,12 @@ export default function RootLayout({
         <link rel="icon" href="./favicon.ico" sizes="any" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} w-full antialiased grid sm:grid-cols-4  select-none overflow-x-hidden gap-0`}
+        className=' w-full antialiased flex  select-none overflow-x-hidden gap-[-10px]'
       >
-        <div className="">
-
+        <div className="flex-[26%] border-r-1 border-r-[#2F3336] ">
           <Sidebar />
         </div>
-        <div className="">
+        <div className="flex-[74%]  ">
           {children}
         </div>
       </body>

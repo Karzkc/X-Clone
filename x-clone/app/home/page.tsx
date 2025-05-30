@@ -54,9 +54,9 @@ const page = ({ selected = "Everyone" }) => {
 
   return (
     <>
-      <div className="container flex w-[70vw] h-[100vh]">
-        <div className="center container  w-[60%] ">
-          <div className="topbar border-b-1 border-b-[#1d1f21] flex items-center justify-center ">
+      <div className="main h-[100vh]">
+        <div className="center ">
+          <div className="topbar border-b-1 border-b-[#2F3336] flex items-center justify-center ">
             <div className=' fl cursor-pointer  relative text-lg' onClick={() => { handleTopbarSelection(true) }}>
               For You
               {
@@ -72,7 +72,7 @@ const page = ({ selected = "Everyone" }) => {
               }
             </div>
           </div>
-          <div className={`posting pr-4  border-b-1 border-b-[#1d1f21] ${input ? "h-40" : "h-30"} `}>
+          <div className={`posting pr-4  border-b-1 border-b-[#2F3336] ${input ? "h-40" : "h-30"} `}>
             <div className='flex items-center gap-5 m-5' >
               <img src="/icons/user.png" alt="logo" className="h-[45px] rounded-4xl" />
               <input
@@ -144,9 +144,9 @@ const page = ({ selected = "Everyone" }) => {
             posts
           </div>
         </div>
-        <div className="right container w-[40%] p-4 border-l border-l-[#1d1f21]">
+        <div className="right p-4 border-l border-l-[#2F3336]">
           <Search_input />
-          <div className="premium-section mt-5 p-2 ps-5  h-[170px] w-full border border-[#1d1f21] rounded-[12px] flex-col items-center justify-center">
+          <div className="premium-section mt-5 p-2 ps-5  h-[170px] w-full border border-[#2F3336] rounded-[12px] flex-col items-center justify-center">
             <div className='text-xl font-bold mb-4'>Subscribe to Premium</div>
             <div className='text-[#d2d3d4]  mb-4'>Subscribe to unlock new features and if eligible, receive a share of revenue.</div>
             <button className='font-bold text-lg bg-[#1d9bf0] rounded-4xl flex items-center justify-center h-10 w-30 '>

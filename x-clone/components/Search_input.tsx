@@ -29,7 +29,7 @@ const Search_input = () => {
     
     return (
         <div>
-            <div className='flex items-center rounded-4xl border-2 pr-2 border-[#1d1f21] focus-within:border-[#1d9bf0]'>
+            <div className='flex items-center rounded-4xl border-1 pr-2 border-[#2F3336] focus-within:border-[#1d9bf0]'>
                 <input
                     type="text"
                     placeholder="Search"

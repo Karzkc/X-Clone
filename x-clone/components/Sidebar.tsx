@@ -5,25 +5,8 @@ import { usePathname } from 'next/navigation';
 
 
 const Sidebar = () => {
+    // for sidebar grow and shrink
     const [expanded, setExpanded] = useState(true);
-    const pathname = usePathname();
-    const [pageURL, setPageURL] = useState("");
-
-    useEffect(() => {
-        const current = pathname.split('/').filter(Boolean).pop();
-        setPageURL(current || "home");
-        console.log("Current Page:", current);
-        document.querySelectorAll('.sidebar .title').forEach(el => {
-            el.classList.remove('!font-[700]');
-            el.classList.remove('!text-white');
-        });
-        if (current) {
-            const currTitle = document.querySelector(`.sidebar .title.${current}`);
-            currTitle?.classList.add('!font-[700]');
-            currTitle?.classList.add('!text-white');
-        }
-    }, [pathname]); 
-
     useEffect(() => {
         const handleExpandation = () => {
             if (window.innerWidth < 1260) {
@@ -39,13 +22,26 @@ const Sidebar = () => {
         };
     }, []);
 
-    
-    
+    // for URL based sidebar option
+    const pathname = usePathname();
+    useEffect(() => {
+        const current = pathname.split('/').filter(Boolean).pop();
+        console.log("Current Page:", current);
+        document.querySelectorAll('.sidebar .title').forEach(el => {
+            el.classList.remove('!font-[700]');
+            el.classList.remove('!text-white');
+        });
+        if (current) {
+            const currTitle = document.querySelector(`.sidebar .title.${current}`);
+            currTitle?.classList.add('!font-[700]');
+            currTitle?.classList.add('!text-white');
+        }
+    }, [pathname]);
 
     return (
         <>
 
-            <div className='sidebar sm:ps-18 ps-5  pt-2 pb-8 border-r-2 border-r-[#1d1f21]   h-screen absolute left-0 flex flex-col justify-between items-center gap-0'>
+            <div className='sidebar sm:ps-32 ps-5  pt-2 pb-8  h-screen absolute left-0 flex flex-col justify-between items-center gap-0'>
 
                 <div className="logo items ">
                     <Link href={"/home"}>
@@ -64,7 +60,7 @@ const Sidebar = () => {
                                 <img src="/icons/home.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
-                                <div className="title  home text-xl ">Home</div>
+                                <div className="title  home text-[20px] ">Home</div>
                             }
                         </span>
                     </Link>
@@ -76,7 +72,7 @@ const Sidebar = () => {
                                 <img src="/icons/search.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
-                                <div className="title explore text-xl">Explore</div>
+                                <div className="title explore text-[20px]">Explore</div>
                             }
                         </span>
                     </Link>
@@ -88,7 +84,7 @@ const Sidebar = () => {
                                 <img src="/icons/notif.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
-                                <div className="title notifications text-xl">Notifications</div>
+                                <div className="title notifications text-[20px]">Notifications</div>
                             }
                         </span>
                     </Link>
@@ -100,7 +96,7 @@ const Sidebar = () => {
                                 <img src="/icons/msg.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
-                                <div className="title messages text-xl">Messages</div>
+                                <div className="title messages text-[20px]">Messages</div>
                             }
                         </span>
                     </Link>
@@ -112,7 +108,7 @@ const Sidebar = () => {
                                 <img src="/icons/grok.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
-                                <div className="title grok text-xl">Grok</div>
+                                <div className="title grok text-[20px]">Grok</div>
                             }
                         </span>
                     </Link>
@@ -124,7 +120,7 @@ const Sidebar = () => {
                                 <img src="/icons/communities.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
-                                <div className="title communities text-xl">Communities</div>
+                                <div className="title communities text-[20px]">Communities</div>
                             }
                         </span>
                     </Link>
@@ -136,7 +132,7 @@ const Sidebar = () => {
                                 <img src="/icons/logo.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
-                                <div className="title premium_sign_up text-xl">Premium</div>
+                                <div className="title premium_sign_up text-[20px]">Premium</div>
                             }
                         </span>
                     </Link>
@@ -148,7 +144,7 @@ const Sidebar = () => {
                                 <img src="/icons/profile.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
-                                <div className="title username text-xl">Profile</div>
+                                <div className="title username text-[20px]">Profile</div>
                             }
                         </span>
                     </Link>
@@ -163,7 +159,7 @@ const Sidebar = () => {
                             </div>
                             {expanded &&
 
-                                <div className="title text-xl">More</div>
+                                <div className="title text-[20px]">More</div>
                             }
                         </span>
                     </Link>
@@ -178,7 +174,7 @@ const Sidebar = () => {
                             </div>}
                             {expanded &&
 
-                                <div className="title border rounded-4xl text-xl !w-60 h-14 flex justify-center items-center text-gray-800 font-bold bg-white">Post</div>
+                                <div className="title border rounded-4xl text-[20px] !w-60 h-14 flex justify-center items-center text-gray-800 font-bold bg-white">Post</div>
                             }
                         </span>
                     </Link>
@@ -193,7 +189,7 @@ const Sidebar = () => {
                             </div>
                             {expanded &&
 
-                                <div className="title text-xl">Username</div>
+                                <div className="title text-[20px]">Username</div>
                             }
                         </span>
                     </Link>
