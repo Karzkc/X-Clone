@@ -12,6 +12,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import Whats_Happening from '@/components/Whats_Happening';
+import Who_to_follow from '@/components/Who_to_follow'
+import Footer from '@/components/Footer';
 
 
 const page = ({ selected = "Everyone" }) => {
@@ -56,18 +59,18 @@ const page = ({ selected = "Everyone" }) => {
     <>
       <div className="main h-[100vh]">
         <div className="center ">
-          <div className="topbar border-b-1 border-b-[#2F3336] flex items-center justify-center ">
-            <div className=' fl cursor-pointer  relative text-lg' onClick={() => { handleTopbarSelection(true) }}>
+          <div className=" hero-top  topbar border-b-1 border-b-[#2F3336] flex items-center justify-center ">
+            <div className='hover fl cursor-pointer  relative text-lg' onClick={() => { handleTopbarSelection(true) }}>
               For You
               {
-                bottom_line && <span className="bottom-line  ">
+                bottom_line && <span className="bottom-line w-20  ">
                 </span>
               }
             </div>
-            <div className=' fl cursor-pointer relative text-lg' onClick={() => { handleTopbarSelection(false) }}>
+            <div className='hover fl cursor-pointer relative text-lg' onClick={() => { handleTopbarSelection(false) }}>
               Following
               {
-                !bottom_line && <span className="bottom-line  ">
+                !bottom_line && <span className="bottom-line w-20  ">
                 </span>
               }
             </div>
@@ -137,7 +140,7 @@ const page = ({ selected = "Everyone" }) => {
               <img src="/icons/input/schedule.svg" alt="pic" />
               <img src="/icons/input/location.svg" alt="pic" />
 
-              <span className={`rounded-4xl text-black w-20 fl relative cursor-pointer text-[16px] h-10 font-[600] ml-30 ${centersearchValue ? "bg-[#eff3f4] cursor-pointer" : "bg-[#787a7a] !cursor-not-allowed"}`}>Post</span>
+              <span className={`rounded-4xl text-black w-20 fl absolute cursor-pointer text-[16px] h-10 font-[600] right-0 ${centersearchValue ? "bg-[#eff3f4] cursor-pointer" : "bg-[#787a7a] !cursor-not-allowed"}`}>Post</span>
             </div>
           </div>
           <div className="posts">
@@ -153,6 +156,9 @@ const page = ({ selected = "Everyone" }) => {
               <Link href={"/premium_sign_up"}>Subscribe</Link>
             </button>
           </div>
+          <Whats_Happening />
+          <Who_to_follow />
+          <Footer/>
         </div>
       </div>
     </>

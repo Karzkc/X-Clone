@@ -44,7 +44,7 @@ const Search_input = () => {
                     <img src="/icons/cross.svg" alt="cancel" className='h-6' />
                 </span>}
             </div>
-            {search_popup && <div className="search-popup bg-black min-h-[100px] flex justify-center items-start rounded-[8px]">
+            {search_popup && <div className="search-popup !bg-black min-h-[100px] flex justify-center items-start rounded-[8px]">
                 <span className='text-[#666a6f] text-[17px] mt-5'> Try searching for people, lists, or keywords </span>
             </div>}
         </div>

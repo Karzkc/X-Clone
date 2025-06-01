@@ -1,9 +1,13 @@
 "use client"
+import Footer from '@/components/Footer'
 import Search_input from '@/components/Search_input'
+import Whats_Happening from '@/components/Whats_Happening'
+import Who_to_follow from '@/components/Who_to_follow'
+
 import React, { useState } from 'react'
 
 const page = () => {
-  
+
   // Center Topbar Selection Logic
   const [bottom_line, setBottom_line] = useState({
     1: true,
@@ -14,9 +18,9 @@ const page = () => {
   });
   const handleTopbarSelection = (selectedKey: string) => {
     const updated = Object.keys(bottom_line).reduce((acc, key) => {
-      acc[key] = key === selectedKey;
+      acc[Number(key) as 1 | 2 | 3 | 4 | 5] = key === selectedKey;
       return acc;
-    }, {} as Record<string, boolean>);
+    }, {} as { 1: boolean; 2: boolean; 3: boolean; 4: boolean; 5: boolean });
 
     setBottom_line(updated);
 
@@ -26,64 +30,71 @@ const page = () => {
       <div className="main flex  h-[100vh] ">
 
         <div className="center relative top-0">
-          <div className="top flex items-start justify-center gap-12">
-            <div className='mt-3 w-[85%] '>
-              <Search_input />
+          <div className='hero-top'>
+            <div className="top flex items-start justify-center gap-12">
+              <div className='mt-3 w-[85%] '>
+                <Search_input />
+              </div>
+              <div className="settings options ">
+                <img src="/icons/settings.svg" alt="pic" className='relative top-4 cursor-pointer' />
+              </div>
             </div>
-            <div className="settings options ">
-              <img src="/icons/settings.svg" alt="pic" className='relative top-4 cursor-pointer' />
+            <div className="topbar fl mt-2 relative">
+
+              <div className={`top-options ${bottom_line[1] ? "!text-white" : "!text-[#71767b]"}   `} onClick={() => { handleTopbarSelection("1") }}>
+                For You
+                {
+                  bottom_line[1] && <span className="bottom-line w-15   ">
+                  </span>
+                }
+              </div>
+
+
+              <div className={`top-options ${bottom_line[2] ? "!text-white" : "!text-[#71767b]"}   `} onClick={() => { handleTopbarSelection("2") }}>
+                Trending
+                {
+                  bottom_line[2] && <span className="bottom-line w-15  ">
+                  </span>
+                }
+              </div>
+
+
+              <div className={`top-options ${bottom_line[3] ? "!text-white" : "!text-[#71767b]"}   `} onClick={() => { handleTopbarSelection("3") }}>
+                News
+                {
+                  bottom_line[3] && <span className="bottom-line w-15  ">
+                  </span>
+                }
+              </div>
+
+
+              <div className={`top-options ${bottom_line[4] ? "!text-white" : "!text-[#71767b]"}   `} onClick={() => { handleTopbarSelection("4") }}>
+                Sports
+                {
+                  bottom_line[4] && <span className="bottom-line w-15  ">
+                  </span>
+                }
+              </div>
+
+
+              <div className={`top-options ${bottom_line[5] ? "!text-white" : "!text-[#71767b]"}   `} onClick={() => { handleTopbarSelection("5") }}>
+                Entertainment
+                {
+                  bottom_line[5] && <span className="bottom-line w-15 ">
+                  </span>
+                }
+              </div>
+
             </div>
           </div>
-          <div className="topbar fl mt-2 relative">
-
-            <div className={`top-options ${bottom_line[1] ? "!text-white" : "!text-[#71767b]"}   `} onClick={() => { handleTopbarSelection("1") }}>
-              For You
-              {
-                bottom_line[1] && <span className="bottom-line   ">
-                </span>
-              }
-            </div>
-
-
-            <div className={`top-options ${bottom_line[2] ? "!text-white" : "!text-[#71767b]"}   `} onClick={() => { handleTopbarSelection("2") }}>
-              Trending
-              {
-                bottom_line[2] && <span className="bottom-line  ">
-                </span>
-              }
-            </div>
-
-
-            <div className={`top-options ${bottom_line[3] ? "!text-white" : "!text-[#71767b]"}   `} onClick={() => { handleTopbarSelection("3") }}>
-              News
-              {
-                bottom_line[3] && <span className="bottom-line  ">
-                </span>
-              }
-            </div>
-
-
-            <div className={`top-options ${bottom_line[4] ? "!text-white" : "!text-[#71767b]"}   `} onClick={() => { handleTopbarSelection("4") }}>
-              Sports
-              {
-                bottom_line[4] && <span className="bottom-line  ">
-                </span>
-              }
-            </div>
-
-
-            <div className={`top-options ${bottom_line[5] ? "!text-white" : "!text-[#71767b]"}   `} onClick={() => { handleTopbarSelection("5") }}>
-              Entertainment
-              {
-                bottom_line[5] && <span className="bottom-line ">
-                </span>
-              }
-            </div>
+          <div className="center-content">
 
           </div>
         </div>
         <div className="right p-4 border-l border-l-[#1d1f21]">
-          right
+          <Who_to_follow />
+          <Whats_Happening />
+          <Footer/>
         </div>
       </div>
     </>

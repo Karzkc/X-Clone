@@ -41,7 +41,7 @@ const Sidebar = () => {
     return (
         <>
 
-            <div className='sidebar sm:ps-32 ps-5  pt-2 pb-8  h-screen absolute left-0 flex flex-col justify-between items-center gap-0'>
+            <div className='fixed sidebar sm:ps-32 ps-5  pt-2 pb-8  h-screen  left-0 flex flex-col justify-between items-center gap-0'>
 
                 <div className="logo items ">
                     <Link href={"/home"}>

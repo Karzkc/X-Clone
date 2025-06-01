@@ -22,7 +22,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
 }
 
 /* Components Classes */
@@ -59,7 +59,6 @@ body {
 
 .items span {
   width: fit-content;
-  display: flex;
   padding: 10px;
   padding-right: 20px;
   gap: 20px;
@@ -74,7 +73,6 @@ body {
 
 .post span {
   width: fit-content;
-  display: flex;
   gap: 20px;
   cursor: pointer;
   border-radius: 100px;
@@ -102,6 +100,7 @@ body {
 .main {
   display: flex;
   padding-right: 100px;
+  height: 100%;
 }
 
 .center {
@@ -110,11 +109,20 @@ body {
 
 .right {
   flex: 40%;
-  border: 2px solid white;
+  padding: 15px 10px 0px 30px;
+}
+
+.hero-top {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
 }
 
 .topbar {
   border-bottom: 1px solid var(--light-border);
+  padding: 0px 0px 2px 0px;
 }
 
 .topbar div {
@@ -129,13 +137,12 @@ body {
 }
 
 .items span:hover,
-.topbar div:hover {
-  transition: all 300ms ease-in-out;
+.hover:hover {
+  transition: all 150ms ease-in-out;
   background: #EFF3F419;
 }
 
 .bottom-line {
-  width: 70%;
   height: 5px;
   background-color: #1d9bf0;
   bottom: 0;
@@ -161,11 +168,39 @@ body {
 .search-popup,
 .dropdown {
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px;
+  
 }
 
 .title:not(.post div) {
   color: rgb(181, 181, 181);
 }
+
+.trendings {
+  cursor: pointer;
+}
+
+.trendings:hover {
+  background-color: #0a0a0a;
+  transition: 150ms ease-in-out;
+}
+
+.hamburger {
+  cursor: pointer;
+  border-radius: 9999px;
+  padding: 7px;
+  border: none;
+  transition: 100ms ease-in-out;
+
+}
+
+.hamburger:hover {
+  background-color: #0A171F;
+}
+
+.hamburger:hover .hamsvg {
+  fill: #1D9BF0;
+}
+
 
 /* Explore Page */
 
