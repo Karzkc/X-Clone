@@ -6,7 +6,7 @@ import Who_to_follow from '@/components/Who_to_follow'
 
 import React, { useState } from 'react'
 
-const page = () => {
+const Page = () => {
 
   // Center Topbar Selection Logic
   const [bottom_line, setBottom_line] = useState({
@@ -106,4 +106,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

@@ -17,14 +17,14 @@ import Who_to_follow from '@/components/Who_to_follow'
 import Footer from '@/components/Footer';
 
 
-const page = ({ selected = "Everyone" }) => {
+const Page = () => {
 
   const search_ref = useRef<HTMLInputElement>(null)
 
   // URL based sidebar boldnesss logic
   const pathname = usePathname();
-  const pageURL = pathname.split('/').filter(Boolean).pop();
-  console.log(pageURL)
+  const PageURL = pathname.split('/').filter(Boolean).pop();
+  console.log(PageURL)
 
   // Home Page Input Logic
   const [input, setInput] = useState(false);
@@ -42,8 +42,6 @@ const page = ({ selected = "Everyone" }) => {
     setInput(true)
   };
 
-
-
   // Center Topbar Selection Logic
   const [bottom_line, setBottom_line] = useState(true);
   const handleTopbarSelection = (e: boolean) => {
@@ -54,6 +52,9 @@ const page = ({ selected = "Everyone" }) => {
       setBottom_line(false)
     }
   }
+
+  // Dropdown selection state moved here
+  const [selected, setSelected] = useState("Everyone");
 
   return (
     <>
@@ -94,7 +95,7 @@ const page = ({ selected = "Everyone" }) => {
               <div className='text-[#1d9bf0]   '>
                 <DropdownMenu>
                   <DropdownMenuTrigger className="cursor-pointer text-[#1d9bf0]">
-                    Everyone can Reply
+                    {selected} can Reply
                   </DropdownMenuTrigger>
 
                   <DropdownMenuContent className="dropdown bg-black text-white w-84 p-2 rounded-xl shadow-lg border-none">
@@ -116,6 +117,7 @@ const page = ({ selected = "Everyone" }) => {
                       <DropdownMenuItem
                         key={item.value}
                         className="flex items-center gap-3 py-2 px-2 cursor-pointer transition-colors duration-100 hover:!bg-gray-800 hover:!text-white rounded-md"
+                        onClick={() => setSelected(item.value)}
                       >
                         <div className="bg-[#1d9bf0] p-2 rounded-full text-white">
                           {item.icon}
@@ -166,5 +168,5 @@ const page = ({ selected = "Everyone" }) => {
   )
 }
 
-export default page
+export default Page
 
