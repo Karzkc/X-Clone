@@ -99,17 +99,20 @@ body {
 
 .main {
   display: flex;
+  height: 100vh;
   padding-right: 100px;
-  height: 100%;
 }
 
 .center {
   flex: 60%;
+  overflow-y: auto;
 }
 
 .right {
   flex: 40%;
   padding: 15px 10px 0px 30px;
+  max-height: fit-content !important;
+  overflow-y: auto;
 }
 
 .hero-top {
@@ -163,12 +166,24 @@ body {
   background-color: #031018;
 }
 
+
+.trendings:hover,
+.follows:hover {
+  background-color: #0a0a0a;
+  transition: 150ms ease-in-out;
+}
+
+.button-hover:hover {
+  background-color: #D7DBDC;
+  transition: ease-in-out;
+}
+
 /* Home Page */
 
 .search-popup,
 .dropdown {
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px;
-  
+
 }
 
 .title:not(.post div) {
@@ -177,11 +192,6 @@ body {
 
 .trendings {
   cursor: pointer;
-}
-
-.trendings:hover {
-  background-color: #0a0a0a;
-  transition: 150ms ease-in-out;
 }
 
 .hamburger {

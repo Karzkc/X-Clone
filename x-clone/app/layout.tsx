@@ -23,10 +23,10 @@ export default function RootLayout({
       <body
         className=' w-full antialiased flex  select-none overflow-x-hidden gap-[-10px]'
       >
-        <div className=" flex-[26%]  overflow-hidden ">
+        <div className=" flex-[26%] border-r-1 border-r-[#2F3336]  overflow-hidden ">
           <Sidebar />
         </div>
-        <div className="flex-[74%] border-l-1 border-l-[#2F3336]  ">
+        <div className="flex-[74%]   ">
           {children}
         </div>
       </body>

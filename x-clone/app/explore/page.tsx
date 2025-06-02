@@ -27,7 +27,7 @@ const page = () => {
   };
   return (
     <>
-      <div className="main flex  h-[100vh] ">
+      <div className="main flex ">
 
         <div className="center relative top-0">
           <div className='hero-top'>
@@ -41,7 +41,7 @@ const page = () => {
             </div>
             <div className="topbar fl mt-2 relative">
 
-              <div className={`top-options ${bottom_line[1] ? "!text-white" : "!text-[#71767b]"}   `} onClick={() => { handleTopbarSelection("1") }}>
+              <div className={`top-options hover ${bottom_line[1] ? "!text-white" : "!text-[#71767b]"}   `} onClick={() => { handleTopbarSelection("1") }}>
                 For You
                 {
                   bottom_line[1] && <span className="bottom-line w-15   ">
@@ -50,7 +50,7 @@ const page = () => {
               </div>
 
 
-              <div className={`top-options ${bottom_line[2] ? "!text-white" : "!text-[#71767b]"}   `} onClick={() => { handleTopbarSelection("2") }}>
+              <div className={`top-options hover ${bottom_line[2] ? "!text-white" : "!text-[#71767b]"}   `} onClick={() => { handleTopbarSelection("2") }}>
                 Trending
                 {
                   bottom_line[2] && <span className="bottom-line w-15  ">
@@ -59,7 +59,7 @@ const page = () => {
               </div>
 
 
-              <div className={`top-options ${bottom_line[3] ? "!text-white" : "!text-[#71767b]"}   `} onClick={() => { handleTopbarSelection("3") }}>
+              <div className={`top-options hover ${bottom_line[3] ? "!text-white" : "!text-[#71767b]"}   `} onClick={() => { handleTopbarSelection("3") }}>
                 News
                 {
                   bottom_line[3] && <span className="bottom-line w-15  ">
@@ -68,7 +68,7 @@ const page = () => {
               </div>
 
 
-              <div className={`top-options ${bottom_line[4] ? "!text-white" : "!text-[#71767b]"}   `} onClick={() => { handleTopbarSelection("4") }}>
+              <div className={`top-options hover ${bottom_line[4] ? "!text-white" : "!text-[#71767b]"}   `} onClick={() => { handleTopbarSelection("4") }}>
                 Sports
                 {
                   bottom_line[4] && <span className="bottom-line w-15  ">
@@ -77,7 +77,7 @@ const page = () => {
               </div>
 
 
-              <div className={`top-options ${bottom_line[5] ? "!text-white" : "!text-[#71767b]"}   `} onClick={() => { handleTopbarSelection("5") }}>
+              <div className={`top-options hover ${bottom_line[5] ? "!text-white" : "!text-[#71767b]"}   `} onClick={() => { handleTopbarSelection("5") }}>
                 Entertainment
                 {
                   bottom_line[5] && <span className="bottom-line w-15 ">
@@ -88,7 +88,12 @@ const page = () => {
             </div>
           </div>
           <div className="center-content">
-
+                <Who_to_follow/>
+                <Who_to_follow/>
+                <Who_to_follow/>
+                <Who_to_follow/>
+                <Who_to_follow/>
+                <Who_to_follow/>
           </div>
         </div>
         <div className="right p-4 border-l border-l-[#1d1f21]">
