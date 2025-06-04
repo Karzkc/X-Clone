@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Image from 'next/image'
 const Who_to_follow = () => {
     return (
         <>
@@ -10,7 +10,7 @@ const Who_to_follow = () => {
                 <div className="follows fl h-18">
                     <div className="follow-box  w-full fl cursor-pointer  px-3">
                         <div className="follow-pfp grid flex-[2.5rem] fl  h-10 fl ">
-                            <img src="https://pbs.twimg.com/profile_images/1861992383400816640/2ovEVRmy_400x400.jpg" alt="user" className=' h-10 w-10 rounded-4xl' />
+                            <Image height={30} width={30} src="https://pbs.twimg.com/profile_images/1861992383400816640/2ovEVRmy_400x400.jpg" alt="user" className=' h-10 w-10 rounded-4xl' />
                         </div>
                         <div className="handle-details flex-3/5 flex-col items-start ml-2 text-[16px]  ">
                             <div className="handle-name hover:underline font-[600]">

@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react'
-
+import React, { useRef, useState } from 'react'
+import Image from 'next/image'
 const Search_input = () => {
     // Searchbar Cancel Button Logic
     const search_ref = useRef<HTMLInputElement>(null)
@@ -41,7 +41,7 @@ const Search_input = () => {
                     onBlur={() => searchPopupAppear(false)}
                 />
                 {searchCancel && <span className='cursor-pointer' onClick={handleCancel}>
-                    <img src="/icons/cross.svg" alt="cancel" className='h-6' />
+                    <Image height={30} width={30} src="/icons/cross.svg" alt="cancel" className='h-6' />
                 </span>}
             </div>
             {search_popup && <div className="search-popup !bg-black min-h-[100px] flex justify-center items-start rounded-[8px]">

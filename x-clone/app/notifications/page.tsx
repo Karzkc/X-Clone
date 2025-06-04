@@ -3,7 +3,7 @@ import Footer from '@/components/Footer'
 import Search_input from '@/components/Search_input'
 import Whats_Happening from '@/components/Whats_Happening'
 import Who_to_follow from '@/components/Who_to_follow'
-
+import Image from 'next/image'
 import React, { useState } from 'react'
 
 const Page = () => {
@@ -35,7 +35,7 @@ const Page = () => {
                 Notifications
               </div>
               <div className="settings options">
-                <img src="/icons/settings.svg" alt="pic" className='relative cursor-pointer' />
+                <Image height={36} width={36} src="/icons/settings.svg" alt="pic" className='option-image settings-image relative cursor-pointer' />
               </div>
             </div>
             <div className="topbar fl mt-2 relative">

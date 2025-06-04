@@ -4,27 +4,13 @@ import Search_input from '@/components/Search_input'
 import Whats_Happening from '@/components/Whats_Happening'
 import Who_to_follow from '@/components/Who_to_follow'
 import Link from 'next/link'
+import Image from 'next/image'
 
-import React, { useState } from 'react'
+import React from 'react'
 
 const Page = () => {
 
-  // Center Topbar Selection Logic
-  const [bottom_line, setBottom_line] = useState({
-    1: true,
-    2: false,
-    3: false,
 
-  });
-  const handleTopbarSelection = (selectedKey: string) => {
-    const updated = Object.keys(bottom_line).reduce((acc, key) => {
-      acc[Number(key) as 1 | 2 | 3] = key === selectedKey;
-      return acc;
-    }, {} as { 1: boolean; 2: boolean; 3: boolean; });
-
-    setBottom_line(updated);
-
-  };
   return (
     <>
       <div className="main flex ">
@@ -34,19 +20,19 @@ const Page = () => {
             <div className='comm-left  fl gap-6 '>
               <Link href="/home">
                 <span className='hover:bg-[#EFF3F419] ease-in-out duration-150 rounded-4xl h-9 w-9 fl '>
-                  <img src="/icons/back.svg" alt="back" className='h-5' />
+                  <Image width={30} height={30} src="/icons/back.svg" alt="back" className='h-5' />
                 </span>
               </Link>
               <div className="text-xl font-[600]">
                 Communities
               </div>
             </div>
-            <div className="comm-icons fl gap-1 options">
+            <div className="comm-icons fl gap-1 ">
               <div className='fl'>
-                <img src="/icons/search.svg" alt="search" className='!h-8' />
+                <Image height={32} width={32} src="/icons/search.svg" alt="search" className=' option-image' />
               </div>
               <div className='fl'>
-                <img src="/icons/get-verified.svg" alt="search" className='!h-8' />
+                <Image height={32} width={32} src="/icons/get-verified.svg" alt="search" className=' option-image' />
               </div>
             </div>
           </div>

@@ -153,8 +153,7 @@ body {
   position: absolute;
 }
 
-.options img {
-  height: 36px;
+.option-image {
   cursor: pointer;
   border-radius: 9999px;
   padding: 7px;
@@ -162,7 +161,7 @@ body {
   transition: 100ms ease-in-out;
 }
 
-.options img:hover {
+.option-image:hover {
   background-color: #031018;
 }
 
@@ -226,7 +225,7 @@ body {
 
 }
 
-.settings img:hover {
+.settings-image:hover {
   background-color: #181919 !important;
 
 }

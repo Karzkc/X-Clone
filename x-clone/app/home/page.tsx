@@ -15,6 +15,7 @@ import {
 import Whats_Happening from '@/components/Whats_Happening';
 import Who_to_follow from '@/components/Who_to_follow'
 import Footer from '@/components/Footer';
+import Image from 'next/image'
 
 
 const Page = () => {
@@ -78,7 +79,7 @@ const Page = () => {
           </div>
           <div className={`posting pr-4  border-b-1 border-b-[#2F3336] ${input ? "h-40" : "h-30"} `}>
             <div className='flex items-center gap-5 m-5' >
-              <img src="/icons/user.png" alt="logo" className="h-[45px] rounded-4xl" />
+              <Image height={45} width={45} src="/icons/user.png" alt="logo" className="h-[45px] rounded-4xl" />
               <input
                 onClick={handleInputPost}
                 value={centersearchValue}
@@ -91,7 +92,7 @@ const Page = () => {
 
             {input && <div className="onclick-input pb-3 border-b-1 border-b-[#1d1f21] !cursor-pointer flex text-[16px] gap-2 ml-20 relative bottom-4">
 
-              <img src="/icons/global-icon.svg" alt="global" className='h-[22px]' />
+              <Image height={30} width={30} src="/icons/global-icon.svg" alt="global" className='h-[22px]' />
               <div className='text-[#1d9bf0]   '>
                 <DropdownMenu>
                   <DropdownMenuTrigger className="cursor-pointer text-[#1d9bf0]">
@@ -134,13 +135,13 @@ const Page = () => {
               </div>
             </div>}
             <div className='options flex items-center justify-start  pl-25 gap-2 relative'>
-              <img src="/icons/input/media.svg" alt="pic" />
-              <img src="/icons/input/gif.svg" alt="pic" />
-              <img src="/icons/input/grok.svg" alt="pic" />
-              <img src="/icons/input/poll.svg" alt="pic" />
-              <img src="/icons/input/emoji.svg" alt="pic" />
-              <img src="/icons/input/schedule.svg" alt="pic" />
-              <img src="/icons/input/location.svg" alt="pic" />
+              <Image height={36} width={36} className='option-image' src="/icons/input/media.svg" alt="pic" />
+              <Image height={36} width={36} className='option-image' src="/icons/input/gif.svg" alt="pic" />
+              <Image height={36} width={36} className='option-image' src="/icons/input/grok.svg" alt="pic" />
+              <Image height={36} width={36} className='option-image' src="/icons/input/poll.svg" alt="pic" />
+              <Image height={36} width={36} className='option-image' src="/icons/input/emoji.svg" alt="pic" />
+              <Image height={36} width={36} className='option-image' src="/icons/input/schedule.svg" alt="pic" />
+              <Image height={36} width={36} className='option-image' src="/icons/input/location.svg" alt="pic" />
 
               <span className={` rounded-4xl text-black w-20 fl absolute cursor-pointer text-[16px] h-10 font-[600] right-0 ${centersearchValue ? "bg-[#eff3f4] cursor-pointer button-hover" : "bg-[#787a7a] !cursor-not-allowed"}`}>Post</span>
             </div>

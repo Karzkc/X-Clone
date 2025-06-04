@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation';
-
+import Image from 'next/image'
 
 const Sidebar = () => {
     // for sidebar grow and shrink
@@ -48,7 +48,7 @@ const Sidebar = () => {
 
                         <span className=' !pr-3'>
                             <div className="icon">
-                                <img src="/icons/logo.svg" alt="logo" className="h-[30px]" />
+                                <Image height={30} width={30} src="/icons/logo.svg" alt="logo" className="h-[30px]" />
                             </div>
                         </span>
                     </Link>
@@ -57,7 +57,7 @@ const Sidebar = () => {
                     <Link href={"/home"}>
                         <span>
                             <div className="icon">
-                                <img src="/icons/home.svg" alt="logo" className="h-[30px]" />
+                                <Image height={30} width={30} src="/icons/home.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
                                 <div className="title  home text-[20px] ">Home</div>
@@ -69,7 +69,7 @@ const Sidebar = () => {
                     <Link href={"/explore"}>
                         <span>
                             <div className="icon">
-                                <img src="/icons/search.svg" alt="logo" className="h-[30px]" />
+                                <Image height={30} width={30} src="/icons/search.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
                                 <div className="title explore text-[20px]">Explore</div>
@@ -81,7 +81,7 @@ const Sidebar = () => {
                     <Link href={"/notifications"}>
                         <span>
                             <div className="icon">
-                                <img src="/icons/notif.svg" alt="logo" className="h-[30px]" />
+                                <Image height={30} width={30} src="/icons/notif.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
                                 <div className="title notifications text-[20px]">Notifications</div>
@@ -93,7 +93,7 @@ const Sidebar = () => {
                     <Link href={"/messages"}>
                         <span>
                             <div className="icon">
-                                <img src="/icons/msg.svg" alt="logo" className="h-[30px]" />
+                                <Image height={30} width={30} src="/icons/msg.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
                                 <div className="title messages text-[20px]">Messages</div>
@@ -105,7 +105,7 @@ const Sidebar = () => {
                     <Link href={"/grok"}>
                         <span>
                             <div className="icon">
-                                <img src="/icons/grok.svg" alt="logo" className="h-[30px]" />
+                                <Image height={30} width={30} src="/icons/grok.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
                                 <div className="title grok text-[20px]">Grok</div>
@@ -117,7 +117,7 @@ const Sidebar = () => {
                     <Link href={"/communities"}>
                         <span>
                             <div className="icon">
-                                <img src="/icons/communities.svg" alt="logo" className="h-[30px]" />
+                                <Image height={30} width={30} src="/icons/communities.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
                                 <div className="title communities text-[20px]">Communities</div>
@@ -129,7 +129,7 @@ const Sidebar = () => {
                     <Link href={"/premium_sign_up"}>
                         <span>
                             <div className="icon">
-                                <img src="/icons/logo.svg" alt="logo" className="h-[30px]" />
+                                <Image height={30} width={30} src="/icons/logo.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
                                 <div className="title premium_sign_up text-[20px]">Premium</div>
@@ -141,7 +141,7 @@ const Sidebar = () => {
                     <Link href={"/username"}>
                         <span>
                             <div className="icon">
-                                <img src="/icons/profile.svg" alt="logo" className="h-[30px]" />
+                                <Image height={30} width={30} src="/icons/profile.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
                                 <div className="title username text-[20px]">Profile</div>
@@ -155,7 +155,7 @@ const Sidebar = () => {
                         <span>
 
                             <div className="icon">
-                                <img src="/icons/more.svg" alt="logo" className="h-[30px]" />
+                                <Image height={30} width={30} src="/icons/more.svg" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
 
@@ -170,7 +170,7 @@ const Sidebar = () => {
                         <span>
 
                             {!expanded && <div className="icon">
-                                <img src="/icons/post.svg" alt="logo" className="h-[30px]" />
+                                <Image height={30} width={30} src="/icons/post.svg" alt="logo" className="h-[30px]" />
                             </div>}
                             {expanded &&
 
@@ -185,7 +185,7 @@ const Sidebar = () => {
                         <span>
 
                             <div className="icon">
-                                <img src="/icons/user.png" alt="logo" className="h-[30px]" />
+                                <Image height={30} width={30} src="/icons/user.png" alt="logo" className="h-[30px]" />
                             </div>
                             {expanded &&
 
