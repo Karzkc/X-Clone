@@ -150,12 +150,12 @@ const Page = () => {
             posts
           </div>
         </div>
-        <div className="right p-4 border-l border-l-[#2F3336]">
+        <div className="right p-4">
           <Search_input />
           <div className="premium-section mt-5 p-2 ps-5  h-[170px] w-full border border-[#2F3336] rounded-[12px] flex-col items-center justify-center">
-            <div className='text-xl font-bold mb-4'>Subscribe to Premium</div>
-            <div className='text-[#d2d3d4]  mb-4'>Subscribe to unlock new features and if eligible, receive a share of revenue.</div>
-            <button className='font-bold text-lg bg-[#1d9bf0] rounded-4xl flex items-center justify-center h-10 w-30 '>
+            <div className='xl:text-xl lg:text-lg font-bold mb-4'>Subscribe to Premium</div>
+            <div className='text-[#d2d3d4] xl:mb-4 lg:mb-2 lg:text-sm md:text-xs '>Subscribe to unlock new features and if eligible, receive a share of revenue.</div>
+            <button className='font-bold text-lg md:text-sm bg-[#1d9bf0] rounded-4xl flex items-center justify-center h-8 xl:w-25 md:w-20  '>
               <Link href={"/premium_sign_up"}>Subscribe</Link>
             </button>
           </div>

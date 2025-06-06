@@ -1,4 +1,6 @@
 @import url(./styles/utils.css);
+@import url(./styles/media-query.css);
+
 
 * {
   box-sizing: border-box;
@@ -11,6 +13,23 @@ body {
   font-family: 'Chirp';
   font-weight: 400;
 }
+
+
+::-webkit-scrollbar {
+  width: 5px; 
+  background-color: #1e1e1e; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #aaa; 
+  border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ccc; 
+}
+
+
 
 /* Utility Classes */
 
@@ -27,14 +46,7 @@ body {
 
 /* Components Classes */
 /* Loading Interface */
-.loader {
-  border: 6px solid #f3f3f3;
-  border-top: 6px solid #1d9bf0;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  animation: spin 1s linear infinite;
-}
+
 
 @keyframes spin {
   0% {
@@ -47,10 +59,10 @@ body {
 }
 
 /* Sidebar */
+
 .items,
 .post {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   width: 100%;
   cursor: pointer;
@@ -65,10 +77,15 @@ body {
   cursor: pointer;
   border-radius: 100px;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   height: fit-content;
   margin: 0;
+}
+
+.items span:hover,
+.hover:hover {
+  transition: all 150ms ease-in-out;
+  background: #EFF3F419;
 }
 
 .post span {
@@ -100,12 +117,12 @@ body {
 .main {
   display: flex;
   height: 100vh;
-  padding-right: 100px;
+  
 }
 
 .center {
-  flex: 60%;
   overflow-y: auto;
+  border: 1px solid #2f3336 !important;
 }
 
 .right {
@@ -113,8 +130,12 @@ body {
   padding: 15px 10px 0px 30px;
   max-height: fit-content !important;
   overflow-y: auto;
+  border: none !important;
 }
 
+.right::-webkit-scrollbar{
+  display: none;
+}
 .hero-top {
   position: sticky;
   top: 0;
@@ -139,11 +160,7 @@ body {
   position: relative;
 }
 
-.items span:hover,
-.hover:hover {
-  transition: all 150ms ease-in-out;
-  background: #EFF3F419;
-}
+
 
 .bottom-line {
   height: 5px;

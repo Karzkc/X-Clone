@@ -7,9 +7,10 @@ import Image from 'next/image'
 const Sidebar = () => {
     // for sidebar grow and shrink
     const [expanded, setExpanded] = useState(true);
+
     useEffect(() => {
         const handleExpandation = () => {
-            if (window.innerWidth < 1260) {
+            if (window.innerWidth < 1278) {
                 setExpanded(false);
             } else {
                 setExpanded(true);
@@ -20,6 +21,7 @@ const Sidebar = () => {
         return () => {
             window.removeEventListener('resize', handleExpandation);
         };
+
     }, []);
 
     // for URL based sidebar option
@@ -27,27 +29,35 @@ const Sidebar = () => {
     useEffect(() => {
         const current = pathname.split('/').filter(Boolean).pop();
         console.log("Current Page:", current);
+
         document.querySelectorAll('.sidebar .title').forEach(el => {
-            el.classList.remove('!font-[700]');
-            el.classList.remove('!text-white');
+            el.classList.remove('!font-[700]', '!text-white');
         });
+
+        document.querySelectorAll('span img').forEach(el => {
+            el.classList.remove('!h-[40px]');
+        });
+
         if (current) {
-            const currTitle = document.querySelector(`.sidebar .title.${current}`);
-            currTitle?.classList.add('!font-[700]');
-            currTitle?.classList.add('!text-white');
+            const titleEl = document.querySelector(`.sidebar .title.${current}`);
+            titleEl?.classList.add('!font-[700]', '!text-white');
+
+            const iconEl = titleEl?.previousElementSibling?.querySelector('span img');
+            iconEl?.classList.add('!shadow-2xl' , '!shadow-amber-50');
         }
     }, [pathname]);
+
 
     return (
         <>
 
-            <div className='fixed sidebar sm:ps-32 ps-5  pt-2 pb-8  h-screen  left-0 flex flex-col justify-between items-center gap-0'>
+            <div className=' w-full fixed sidebar pt-2 pb-8  h-screen flex flex-col justify-between items-center gap-0'>
 
                 <div className="logo items ">
                     <Link href={"/home"}>
 
-                        <span className=' !pr-3'>
-                            <div className="icon">
+                        <span className='fl  !p-0 !w-[50px] !h-[50px]'>
+                            <div className="icon  ">
                                 <Image height={30} width={30} src="/icons/logo.svg" alt="logo" className="h-[30px]" />
                             </div>
                         </span>
@@ -56,8 +66,8 @@ const Sidebar = () => {
                 <div className="home items">
                     <Link href={"/home"}>
                         <span>
-                            <div className="icon">
-                                <Image height={30} width={30} src="/icons/home.svg" alt="logo" className="h-[30px]" />
+                            <div className=" icon">
+                                <Image height={30} width={30} src="/icons/home.svg" alt="logo" className="h-[30px] " />
                             </div>
                             {expanded &&
                                 <div className="title  home text-[20px] ">Home</div>
