@@ -30,7 +30,7 @@ const Sidebar = () => {
         const current = pathname.split('/').filter(Boolean).pop();
         console.log("Current Page:", current);
 
-        document.querySelectorAll('.sidebar .title').forEach(el => {
+        document.querySelectorAll('.title').forEach(el => {
             el.classList.remove('!font-[700]', '!text-white');
         });
 
@@ -39,11 +39,11 @@ const Sidebar = () => {
         });
 
         if (current) {
-            const titleEl = document.querySelector(`.sidebar .title.${current}`);
+            const titleEl = document.querySelector(`.title.${current}`);
             titleEl?.classList.add('!font-[700]', '!text-white');
 
             const iconEl = titleEl?.previousElementSibling?.querySelector('span img');
-            iconEl?.classList.add('!shadow-2xl' , '!shadow-amber-50');
+            iconEl?.classList.add('!shadow-2xl', '!shadow-amber-50');
         }
     }, [pathname]);
 
@@ -206,6 +206,68 @@ const Sidebar = () => {
                 </div>
             </div>
 
+            <div className="bottombar z-10 w-full h-[54px] !bg-black absolute bottom-0 border-t border-t-[#2f3336] fl gap-1 ">
+                <div className="home">
+                    <Link href={"/home"}>
+                        <span>
+                            <div className=" icon">
+                                <Image height={26} width={26} src="/icons/home.svg" alt="logo" className="h-[26px] " />
+                            </div>
+                            
+                        </span>
+                    </Link>
+                </div>
+                <div className="search">
+                    <Link href={"/explore"}>
+                        <span>
+                            <div className="icon">
+                                <Image height={26} width={26} src="/icons/search.svg" alt="logo" className="h-[26px]" />
+                            </div>
+                            
+                        </span>
+                    </Link>
+                </div>
+                <div className="notifications">
+                    <Link href={"/notifications"}>
+                        <span>
+                            <div className="icon">
+                                <Image height={26} width={26} src="/icons/notif.svg" alt="logo" className="h-[26px]" />
+                            </div>
+                            
+                        </span>
+                    </Link>
+                </div>
+                <div className="messages">
+                    <Link href={"/messages"}>
+                        <span>
+                            <div className="icon">
+                                <Image height={26} width={26} src="/icons/msg.svg" alt="logo" className="h-[26px]" />
+                            </div>
+                            
+                        </span>
+                    </Link>
+                </div>
+                <div className="grok">
+                    <Link href={"/grok"}>
+                        <span>
+                            <div className="icon">
+                                <Image height={26} width={26} src="/icons/grok.svg" alt="logo" className="h-[26px]" />
+                            </div>
+                            
+                        </span>
+                    </Link>
+                </div>
+                <div className="communities">
+                    <Link href={"/communities"}>
+                        <span>
+                            <div className="icon">
+                                <Image height={26} width={26} src="/icons/communities.svg" alt="logo" className="h-[26px]" />
+                            </div>
+                            
+                        </span>
+                    </Link>
+                </div>
+            </div>
             <style jsx>{`
                 .sidebar {
                     width: ${expanded ? '360px' : '160px'};

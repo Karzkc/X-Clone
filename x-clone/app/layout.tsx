@@ -27,9 +27,9 @@ export default function RootLayout({
         <link rel="icon" href="./favicon.ico" sizes="any" />
       </head>
       <body
-        className=' w-full antialiased flex  select-none overflow-x-hidden gap-[-10px]'
+        className='h-full w-full antialiased sm:flex  select-none overflow-x-hidden gap-[-10px]'
       >
-        <div className=" sm:flex-[26%]  sm:overflow-hidden main-left flex ">
+        <div className=" sm:flex-[26%]  sm:overflow-hidden main-left ">
           <Sidebar />
         </div>
         <div className="sm:flex-[74%]  main-right flex  ">

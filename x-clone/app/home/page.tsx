@@ -59,22 +59,44 @@ const Page = () => {
 
   return (
     <>
-      <div className="main h-[100vh]">
+      <div className="main h-[100vh] ">
         <div className="center ">
-          <div className=" hero-top  topbar border-b-1 border-b-[#2F3336] flex items-center justify-center ">
-            <div className='hover fl cursor-pointer  relative text-lg' onClick={() => { handleTopbarSelection(true) }}>
-              For You
-              {
-                bottom_line && <span className="bottom-line w-20  ">
+          <div className="nav">
+            <div className="temp-top w-full h-[54px] flex items-center justify-evenly px-4 ">
+              <div className="user flex-5/11 ">
+              <Link href={"/username"}>    
+                <Image height={32} width={32} src="/icons/user.png" alt="logo" className=" rounded-4xl" />
+              </Link>
+              </div>
+              <div className="logo flex-1/11 fl">
+              <Link href={"/home"} >
+                <Image height={24} width={24} src="/icons/logo.svg" alt="logo" className="" />
+              </Link>
+              </div>
+              <div className="premium flex-5/11 flex items-center justify-end ">
+              <Link href={"/premium_sign_up"}>
+                <span className='border-1 border-[#536471] rounded-4xl px-3 py-1 font-[600]'>
+                  Get Premium
+
                 </span>
-              }
+              </Link>
+              </div>
             </div>
-            <div className='hover fl cursor-pointer relative text-lg' onClick={() => { handleTopbarSelection(false) }}>
-              Following
-              {
-                !bottom_line && <span className="bottom-line w-20  ">
-                </span>
-              }
+            <div className=" hero-top  topbar border-b-1 border-b-[#2F3336] flex items-center justify-center ">
+              <div className='hover fl cursor-pointer  relative text-lg' onClick={() => { handleTopbarSelection(true) }}>
+                For You
+                {
+                  bottom_line && <span className="bottom-line w-20  ">
+                  </span>
+                }
+              </div>
+              <div className='hover fl cursor-pointer relative text-lg' onClick={() => { handleTopbarSelection(false) }}>
+                Following
+                {
+                  !bottom_line && <span className="bottom-line w-20  ">
+                  </span>
+                }
+              </div>
             </div>
           </div>
           <div className={`posting pr-4  border-b-1 border-b-[#2F3336] ${input ? "h-40" : "h-30"} `}>
@@ -161,7 +183,7 @@ const Page = () => {
           </div>
           <Whats_Happening />
           <Who_to_follow />
-          <Footer/>
+          <Footer />
         </div>
       </div>
     </>
