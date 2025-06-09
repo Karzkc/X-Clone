@@ -16,6 +16,7 @@ import Whats_Happening from '@/components/Whats_Happening';
 import Who_to_follow from '@/components/Who_to_follow'
 import Footer from '@/components/Footer';
 import Image from 'next/image'
+import Posts from '@/components/Posts';
 
 
 const Page = () => {
@@ -64,22 +65,22 @@ const Page = () => {
           <div className="nav">
             <div className="temp-top w-full h-[54px] flex items-center justify-evenly px-4 ">
               <div className="user flex-5/11 ">
-              <Link href={"/username"}>    
-                <Image height={32} width={32} src="/icons/user.png" alt="logo" className=" rounded-4xl" />
-              </Link>
+                <Link href={"/username"}>
+                  <Image height={32} width={32} src="/icons/user.png" alt="logo" className=" rounded-4xl" />
+                </Link>
               </div>
               <div className="logo flex-1/11 fl">
-              <Link href={"/home"} >
-                <Image height={24} width={24} src="/icons/logo.svg" alt="logo" className="" />
-              </Link>
+                <Link href={"/home"} >
+                  <Image height={24} width={24} src="/icons/logo.svg" alt="logo" className="" />
+                </Link>
               </div>
               <div className="premium flex-5/11 flex items-center justify-end ">
-              <Link href={"/premium_sign_up"}>
-                <span className='border-1 border-[#536471] rounded-4xl px-3 py-1 font-[600]'>
-                  Get Premium
+                <Link href={"/premium_sign_up"}>
+                  <span className='border-1 border-[#536471] rounded-4xl px-3 py-1 font-[600]'>
+                    Get Premium
 
-                </span>
-              </Link>
+                  </span>
+                </Link>
               </div>
             </div>
             <div className=" hero-top  topbar border-b-1 border-b-[#2F3336] flex items-center justify-center ">
@@ -168,9 +169,9 @@ const Page = () => {
               <span className={` rounded-4xl text-black w-20 fl absolute cursor-pointer text-[16px] h-10 font-[600] right-0 ${centersearchValue ? "bg-[#eff3f4] cursor-pointer button-hover" : "bg-[#787a7a] !cursor-not-allowed"}`}>Post</span>
             </div>
           </div>
-          <div className="posts">
-            posts
-          </div>
+          <Posts/>
+          <Posts/>
+    
         </div>
         <div className="right p-4">
           <Search_input />
