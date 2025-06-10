@@ -174,32 +174,32 @@ const Sidebar = () => {
                         </span>
                     </Link>
                 </div>
-                <div className="post">
+                <div className="post ">
                     <Link href={"#"}>
 
-                        <span>
+                        <span className=''>
 
                             {!expanded && <div className="icon">
                                 <Image height={30} width={30} src="/icons/post.svg" alt="logo" className="h-[30px]" />
                             </div>}
                             {expanded &&
 
-                                <div className="title border rounded-4xl text-[20px] !w-60 h-14 flex justify-center items-center text-gray-800 font-bold bg-white">Post</div>
+                                <div className="title border rounded-4xl text-[20px] w-[16vw] h-14 flex justify-center items-center text-gray-800 font-bold bg-white">Post</div>
                             }
                         </span>
                     </Link>
                 </div>
                 <div className="profile-icon items">
-                    <Link href={"#"}>
+                    <Link href={"/username"}>
 
                         <span>
 
                             <div className="icon">
-                                <Image height={30} width={30} src="/icons/user.png" alt="logo" className="h-[30px]" />
+                                <Image height={30} width={30} src="/icons/user.png" alt="logo" className="h-[30px] rounded-4xl" />
                             </div>
                             {expanded &&
 
-                                <div className="title text-[20px]">Username</div>
+                                <div className="title text-[20px]">Karzkc</div>
                             }
                         </span>
                     </Link>
@@ -261,13 +261,14 @@ const Sidebar = () => {
                     <Link href={"/communities"}>
                         <span>
                             <div className="icon">
-                                <Image height={26} width={26} src="/icons/communities.svg" alt="logo" className="h-[26px]" />
+                                <Image height={26} width={26} src="/icons/communities.svg" alt="logo" className="h-[26px] " />
                             </div>
                             
                         </span>
                     </Link>
                 </div>
             </div>
+
             <style jsx>{`
                 .sidebar {
                     width: ${expanded ? '360px' : '160px'};

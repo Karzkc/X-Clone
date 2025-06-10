@@ -39,7 +39,11 @@
     .sidebar {
         padding-right: 25px;
     }
+    .post{
+        display: flex;
+        justify-content: end;
 
+    }
     .items {
         justify-content: end;
     }
@@ -58,7 +62,7 @@
 
 }
 
-@media (min-width:500px) and (max-width:1001px) {
+@media (min-width:551px) and (max-width:1001px) {
     .main-left{
         flex: 20% ;
     }
@@ -80,15 +84,19 @@
         display: none;
     }
 }
-@media (min-width:500px) {
+@media (min-width:551px) {
     .bottombar{
         display: none !important;
     }
     .temp-top{
         display: none !important;
     }
+    
+    body{
+        display: flex;
+    }
 }
-@media (max-width:500px) {
+@media (max-width:551px) {
     .body{
         overflow: none !important;
     }

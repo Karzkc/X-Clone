@@ -169,9 +169,11 @@ const Page = () => {
               <span className={` rounded-4xl text-black w-20 fl absolute cursor-pointer text-[16px] h-10 font-[600] right-0 ${centersearchValue ? "bg-[#eff3f4] cursor-pointer button-hover" : "bg-[#787a7a] !cursor-not-allowed"}`}>Post</span>
             </div>
           </div>
-          <Posts/>
-          <Posts/>
-    
+          <div className="post-section mt-5">
+            <Posts />
+            <Posts />
+          </div>
+
         </div>
         <div className="right p-4">
           <Search_input />

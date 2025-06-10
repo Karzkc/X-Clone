@@ -39,10 +39,10 @@ const Page = () => {
                 <Image  height={36} width={36} src="/icons/settings.svg" alt="pic" className= 'option-image settings-image relative top-4 cursor-pointer' />
               </div>
             </div>
-            <div className="topbar fl mt-2 relative">
+            <div className="topbar flex items-center justify-start mt-2 overflow-y-auto  ">
 
-              <div className={`top-options hover ${bottom_line[1] ? "!text-white" : "!text-[#71767b]"}   `} onClick={() => { handleTopbarSelection("1") }}>
-                For You
+              <div className={`top-options  hover ${bottom_line[1] ? "!text-white" : "!text-[#71767b]"}   `} onClick={() => { handleTopbarSelection("1") }}>
+                For You
                 {
                   bottom_line[1] && <span className="bottom-line w-15   ">
                   </span>
