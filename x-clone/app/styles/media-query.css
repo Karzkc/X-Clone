@@ -29,7 +29,9 @@
     .right {
         display: inline;
     }
-    
+    .post-tools{
+        gap: 5%;
+    }
 }
 
 @media (min-width:1002px) and (max-width:1277px) {
@@ -50,6 +52,9 @@
     }
     .items {
         justify-content: end;
+    }
+    .post-tools{
+        gap: 4%;
     }
     
 
@@ -88,6 +93,10 @@
     .right {
         display: none;
     }
+    .post-tools{
+        gap: 5%;
+        
+    }
 }
 @media (min-width:551px) {
     .bottombar{
@@ -103,7 +112,7 @@
 }
 @media (max-width:551px) {
     .body{
-        overflow: none !important;
+        overflow: hidden !important;
     }
     .main-right{
         overflow: hidden;
@@ -117,5 +126,15 @@
     }
     .post-section{
         margin-bottom: 100px;
+    }
+    .post-tools{
+        gap: 1%;
+        padding-left: 0px;
+        font-size: 10px !important;
+    }
+    .nav{
+        
+        position: sticky;
+        top: 0;
     }
 }

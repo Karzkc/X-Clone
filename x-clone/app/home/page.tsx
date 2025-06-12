@@ -62,8 +62,8 @@ const Page = () => {
     <>
       <div className="main h-[100vh] ">
         <div className="center ">
-          <div className="nav">
-            <div className="temp-top w-full h-[54px] flex items-center justify-evenly px-4 ">
+          <div className="nav z-11">
+            <div className="temp-top w-full h-[54px] flex items-center justify-evenly px-4 bg-black">
               <div className="user flex-5/11 ">
                 <Link href={"/username"}>
                   <Image height={32} width={32} src="/icons/user.png" alt="logo" className=" rounded-4xl" />

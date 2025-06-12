@@ -29,7 +29,7 @@ export default function RootLayout({
       <body
         className='h-full w-full antialiased   select-none overflow-x-hidden gap-[-10px]'
       >
-        <div className=" flex-[26%]  sm:overflow-hidden main-left ">
+        <div className=" flex-[26%]  overflow-hidden main-left ">
           <Sidebar />
         </div>
         <div className="flex-[74%]  main-right flex  ">

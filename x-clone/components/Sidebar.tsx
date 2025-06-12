@@ -206,7 +206,7 @@ const Sidebar = () => {
                 </div>
             </div>
 
-            <div className="bottombar z-10 w-full h-[54px] !bg-black absolute bottom-0 border-t border-t-[#2f3336] fl gap-1 ">
+            <div className="bottombar overflow-hidden  z-10 w-full h-[54px] !bg-black absolute bottom-0 border-t border-t-[#2f3336] fl gap-1 ">
                 <div className="home">
                     <Link href={"/home"}>
                         <span>
