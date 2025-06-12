@@ -22,8 +22,8 @@ const Posts = () => {
         }
     }, [likes]);
 
-    const handleLikeToggle = (index: any) => {
-        setLikes((prevLikes: any) => ({
+    const handleLikeToggle = (index: number) => {
+        setLikes((prevLikes : { [key: number]: boolean }) => ({
             ...prevLikes,
             [index]: !prevLikes[index],
         }));
@@ -45,13 +45,14 @@ const Posts = () => {
         if (typeof window !== "undefined") {
             localStorage.setItem('book_map', JSON.stringify(bookmark));
         }
-    }, [likes]);
+    }, [bookmark]);
 
-    const handleBookmark = (index: any) => {
-        setBookmark((prevBook: any) => ({
+    const handleBookmark = (index: number) => {
+        setBookmark((prevBook: { [key: number]: boolean }) => ({
             ...prevBook,
             [index]: !prevBook[index],
         }));
+        
     };
 
 
