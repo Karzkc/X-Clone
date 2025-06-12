@@ -12,6 +12,10 @@
     .items {
         justify-content: flex-start;
     }
+    .items span{
+        padding: 10px 20px 10px 20px;
+
+    }
 
     .main {
         padding-right: 100px;
@@ -47,6 +51,7 @@
     .items {
         justify-content: end;
     }
+    
 
     .main {
         padding-right: 30px;
@@ -110,5 +115,7 @@
     .main-right,.main,.center{
         width: 100%;
     }
-    
+    .post-section{
+        margin-bottom: 100px;
+    }
 }

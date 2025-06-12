@@ -73,10 +73,10 @@ body {
 
 .items span {
   width: fit-content;
-  
+/* top right bottom left trbl */
   gap: 20px;
   cursor: pointer;
-  border-radius: 100px;
+  border-radius: 9999px;
   display: flex;
   align-items: center;
   height: fit-content;
@@ -217,7 +217,7 @@ body {
   transition: ease-in-out;
 }
 
-/* Home Page */
+/* Home Page */ 
 
 .search-popup,
 .dropdown {
@@ -233,29 +233,73 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4px;
+  gap: 0px;
 }
 
 .trendings {
   cursor: pointer;
 }
 
-.hamburger {
+.blue-icon ,.post-icons {
   cursor: pointer;
   border-radius: 9999px;
   padding: 7px;
   border: none;
   transition: 100ms ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 
-.hamburger:hover {
+.blue-icon:hover {
   background-color: #0A171F;
 }
-
-.hamburger:hover .hamsvg {
+.blue-icon:hover .blue-svg {
   fill: #1D9BF0;
 }
+
+
+.replies:hover .post-icons{
+  background-color: #031018;
+}
+.replies:hover .repsvg {
+  fill: #1D9BF0;
+}
+.replies:hover .reptext {
+  color: #1D9BF0;
+}
+
+.reposts:hover .post-icons{
+  background-color: #071A14;
+}
+.reposts:hover .reposvg {
+  fill: #00BA7C;
+}
+.reposts:hover .repotext {
+  color: #00BA7C;
+}
+
+.likes:hover .post-icons{
+  background-color: #200914;
+}
+.likes:hover .lsvg {
+  fill: #F8177F;
+}
+.likes:hover .ltext {
+  color: #F8177F;
+}
+
+.views:hover .post-icons{
+  background-color: #031018;
+}
+.views:hover .vsvg {
+  fill: #1D9BF0;
+}
+.views:hover .vtext {
+  color: #1D9BF0;
+}
+
 
 
 /* Explore Page */

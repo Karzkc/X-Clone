@@ -53,7 +53,7 @@ const Sidebar = () => {
 
             <div className=' w-full fixed sidebar pt-2 pb-8  h-screen flex flex-col justify-between items-center gap-0'>
 
-                <div className="logo items ">
+                <div className="logo items  ">
                     <Link href={"/home"}>
 
                         <span className='fl  !p-0 !w-[50px] !h-[50px]'>
@@ -63,7 +63,7 @@ const Sidebar = () => {
                         </span>
                     </Link>
                 </div>
-                <div className="home items">
+                <div className="home items ">
                     <Link href={"/home"}>
                         <span>
                             <div className=" icon">
@@ -75,7 +75,7 @@ const Sidebar = () => {
                         </span>
                     </Link>
                 </div>
-                <div className="search items">
+                <div className="search items ">
                     <Link href={"/explore"}>
                         <span>
                             <div className="icon">
@@ -87,7 +87,7 @@ const Sidebar = () => {
                         </span>
                     </Link>
                 </div>
-                <div className="notifications items">
+                <div className="notifications items ">
                     <Link href={"/notifications"}>
                         <span>
                             <div className="icon">
@@ -99,7 +99,7 @@ const Sidebar = () => {
                         </span>
                     </Link>
                 </div>
-                <div className="messages items">
+                <div className="messages items ">
                     <Link href={"/messages"}>
                         <span>
                             <div className="icon">
@@ -111,8 +111,8 @@ const Sidebar = () => {
                         </span>
                     </Link>
                 </div>
-                <div className="grok items">
-                    <Link href={"/grok"}>
+                <div className="grok items ">
+                    <Link href={"#"}>
                         <span>
                             <div className="icon">
                                 <Image height={30} width={30} src="/icons/grok.svg" alt="logo" className="h-[30px]" />
@@ -123,7 +123,7 @@ const Sidebar = () => {
                         </span>
                     </Link>
                 </div>
-                <div className="communities items">
+                <div className="communities items ">
                     <Link href={"/communities"}>
                         <span>
                             <div className="icon">
@@ -135,7 +135,7 @@ const Sidebar = () => {
                         </span>
                     </Link>
                 </div>
-                <div className="premium items">
+                <div className="premium items ">
                     <Link href={"/premium_sign_up"}>
                         <span>
                             <div className="icon">
@@ -147,7 +147,7 @@ const Sidebar = () => {
                         </span>
                     </Link>
                 </div>
-                <div className="profile items">
+                <div className="profile items ">
                     <Link href={"/username"}>
                         <span>
                             <div className="icon">
@@ -159,7 +159,7 @@ const Sidebar = () => {
                         </span>
                     </Link>
                 </div>
-                <div className="more items">
+                <div className="more items ">
                     <Link href={"#"}>
 
                         <span>
@@ -189,7 +189,7 @@ const Sidebar = () => {
                         </span>
                     </Link>
                 </div>
-                <div className="profile-icon items">
+                <div className="profile-icon items ">
                     <Link href={"/username"}>
 
                         <span>

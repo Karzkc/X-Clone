@@ -89,11 +89,7 @@ const Page = () => {
           </div>
           <div className="center-content">
                 <Who_to_follow/>
-                <Who_to_follow/>
-                <Who_to_follow/>
-                <Who_to_follow/>
-                <Who_to_follow/>
-                <Who_to_follow/>
+                <Whats_Happening />
           </div>
         </div>
         <div className="right p-4 border-l border-l-[#1d1f21]">
