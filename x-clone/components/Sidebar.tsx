@@ -112,7 +112,7 @@ const Sidebar = () => {
                     </Link>
                 </div>
                 <div className="grok items ">
-                    <Link href={"#"}>
+                    <Link href={"/"}>
                         <span>
                             <div className="icon">
                                 <Image height={30} width={30} src="/icons/grok.svg" alt="logo" className="h-[30px]" />
@@ -136,7 +136,7 @@ const Sidebar = () => {
                     </Link>
                 </div>
                 <div className="premium items ">
-                    <Link href={"/premium_sign_up"}>
+                    <Link href={"/"}>
                         <span>
                             <div className="icon">
                                 <Image height={30} width={30} src="/icons/logo.svg" alt="logo" className="h-[30px]" />
@@ -148,7 +148,7 @@ const Sidebar = () => {
                     </Link>
                 </div>
                 <div className="profile items ">
-                    <Link href={"/username"}>
+                    <Link href={"/"}>
                         <span>
                             <div className="icon">
                                 <Image height={30} width={30} src="/icons/profile.svg" alt="logo" className="h-[30px]" />
@@ -160,7 +160,7 @@ const Sidebar = () => {
                     </Link>
                 </div>
                 <div className="more items ">
-                    <Link href={"#"}>
+                    <Link href={"/"}>
 
                         <span>
 
@@ -175,7 +175,7 @@ const Sidebar = () => {
                     </Link>
                 </div>
                 <div className="post ">
-                    <Link href={"#"}>
+                    <Link href={"/"}>
 
                         <span className=''>
 
@@ -190,7 +190,7 @@ const Sidebar = () => {
                     </Link>
                 </div>
                 <div className="profile-icon items ">
-                    <Link href={"/username"}>
+                    <Link href={"/"}>
 
                         <span>
 
@@ -238,7 +238,7 @@ const Sidebar = () => {
                     </Link>
                 </div>
                 <div className="messages">
-                    <Link href={"/messages"}>
+                    <Link href={"/"}>
                         <span>
                             <div className="icon">
                                 <Image height={26} width={26} src="/icons/msg.svg" alt="logo" className="h-[26px]" />
@@ -248,7 +248,7 @@ const Sidebar = () => {
                     </Link>
                 </div>
                 <div className="grok">
-                    <Link href={"/grok"}>
+                    <Link href={"/"}>
                         <span>
                             <div className="icon">
                                 <Image height={26} width={26} src="/icons/grok.svg" alt="logo" className="h-[26px]" />
